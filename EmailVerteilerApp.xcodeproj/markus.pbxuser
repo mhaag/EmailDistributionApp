@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	256AC3D80F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 570}}";
+			sepNavSelRange = "{260, 0}";
+			sepNavVisRange = "{0, 843}";
+		};
+	};
+	256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1594, 3666}}";
+			sepNavSelRange = "{3181, 0}";
+			sepNavVisRange = "{2188, 2703}";
+			sepNavWindowFrame = "{{15, 4}, {1101, 874}}";
+		};
+	};
+	2828BFF8122C669300A88291 /* EmailVerteilerApp */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = EmailVerteilerApp;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+			$cs = 1;
+			$ds = 1;
+			$eflags = 1;
+			$es = 1;
+			$fs = 1;
+			$gs = 1;
+			$r10 = 1;
+			$r11 = 1;
+			$r12 = 1;
+			$r13 = 1;
+			$r14 = 1;
+			$r15 = 1;
+			$r8 = 1;
+			$r9 = 1;
+			$rax = 1;
+			$rbp = 1;
+			$rbx = 1;
+			$rcx = 1;
+			$rdi = 1;
+			$rdx = 1;
+			$rip = 1;
+			$rsi = 1;
+			$rsp = 1;
+			$ss = 1;
+		};
+	};
+	2828C00F122C66AD00A88291 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				haagcc/sw/ = svnhaag;
+			};
+		};
+	};
+	2828C010122C66AD00A88291 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	2828C031122CBC7600A88291 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2828C032122CBC7600A88291 /* ABAddressBook.h */;
+		name = "ABAddressBook.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1657;
+		vrLoc = 152;
+	};
+	2828C032122CBC7600A88291 /* ABAddressBook.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ABAddressBook.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AddressBook.framework/Headers/ABAddressBook.h;
+		sourceTree = "<absolute>";
+	};
+	284AA88F12BD001800F253BB /* EmailVerteilerAppAppDelegate.m:81 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 81;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.639843;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	284AA8A212BD005700F253BB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.h */;
+		name = "EmailVerteilerAppAppDelegate.h: 11";
+		rLen = 0;
+		rLoc = 260;
+		rType = 0;
+		vrLen = 843;
+		vrLoc = 0;
+	};
+	284AA8AC12BD008E00F253BB /* EmailVerteilerAppAppDelegate.m:77 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportAdressen:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 77;
+		location = EmailVerteilerApp;
+		modificationTime = 314376487.862627;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	284AA8C912BD012C00F253BB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		name = "EmailVerteilerAppAppDelegate.m: 78";
+		rLen = 0;
+		rLoc = 2838;
+		rType = 0;
+		vrLen = 1920;
+		vrLoc = 2393;
+	};
+	284AA8CA12BD012C00F253BB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		name = "EmailVerteilerAppAppDelegate.m: 86";
+		rLen = 0;
+		rLoc = 3181;
+		rType = 0;
+		vrLen = 2656;
+		vrLoc = 2225;
+	};
+	285FBEDE12BC9E5F007651FD /* EmailVerteilerAppAppDelegate.m:204 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportEmailAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 204;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.60157;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	285FBEF012BCA442007651FD /* EmailVerteilerAppAppDelegate.m:226 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportEmailAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 226;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.6137431;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	285FBF2212BCB824007651FD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 285FBF2312BCB824007651FD /* ABAddressBook.h */;
+		name = "ABAddressBook.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1644;
+		vrLoc = 0;
+	};
+	285FBF2312BCB824007651FD /* ABAddressBook.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ABAddressBook.h;
+		path = /Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/AddressBook.framework/Headers/ABAddressBook.h;
+		sourceTree = "<absolute>";
+	};
+	285FBF2412BCB824007651FD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 285FBF2512BCB824007651FD /* ABAddressBookC.h */;
+		name = "ABAddressBookC.h: 20";
+		rLen = 10;
+		rLoc = 400;
+		rType = 0;
+		vrLen = 2420;
+		vrLoc = 1801;
+	};
+	285FBF2512BCB824007651FD /* ABAddressBookC.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ABAddressBookC.h;
+		path = /Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/AddressBook.framework/Headers/ABAddressBookC.h;
+		sourceTree = "<absolute>";
+	};
+	285FBF5312BCBE1A007651FD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 13";
+		rLen = 0;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 261;
+		vrLoc = 0;
+	};
+	285FBF6412BCC004007651FD /* EmailVerteilerAppAppDelegate.m:131 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 131;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.309627;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	285FBF6612BCC006007651FD /* EmailVerteilerAppAppDelegate.m:149 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 149;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.309901;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	285FBF7A12BCC105007651FD /* EmailVerteilerAppAppDelegate.m:172 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 172;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.31015;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	285FBF8212BCC12F007651FD /* EmailVerteilerAppAppDelegate.m:175 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 175;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.316224;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	285FBF9412BCC363007651FD /* EmailVerteilerAppAppDelegate.m:180 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		functionName = "-exportAdressen:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 180;
+		location = EmailVerteilerApp;
+		modificationTime = 314376484.320832;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	28BB1EAB12BF05AB0080C438 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		name = "EmailVerteilerAppAppDelegate.m: 78";
+		rLen = 0;
+		rLoc = 2838;
+		rType = 0;
+		vrLen = 2014;
+		vrLoc = 2393;
+	};
+	28BB1EB412BF05AB0080C438 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* EmailVerteilerAppAppDelegate.m */;
+		name = "EmailVerteilerAppAppDelegate.m: 86";
+		rLen = 0;
+		rLoc = 3181;
+		rType = 0;
+		vrLen = 2703;
+		vrLoc = 2188;
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecturePreference = x86_64;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 2828BFF8122C669300A88291 /* EmailVerteilerApp */;
+		activeTarget = 8D1107260486CEB800E47090 /* EmailVerteilerApp */;
+		breakpoints = (
+			285FBEDE12BC9E5F007651FD /* EmailVerteilerAppAppDelegate.m:204 */,
+			285FBEF012BCA442007651FD /* EmailVerteilerAppAppDelegate.m:226 */,
+			285FBF6412BCC004007651FD /* EmailVerteilerAppAppDelegate.m:131 */,
+			285FBF6612BCC006007651FD /* EmailVerteilerAppAppDelegate.m:149 */,
+			285FBF7A12BCC105007651FD /* EmailVerteilerAppAppDelegate.m:172 */,
+			285FBF8212BCC12F007651FD /* EmailVerteilerAppAppDelegate.m:175 */,
+			285FBF9412BCC363007651FD /* EmailVerteilerAppAppDelegate.m:180 */,
+			284AA88F12BD001800F253BB /* EmailVerteilerAppAppDelegate.m:81 */,
+			284AA8AC12BD008E00F253BB /* EmailVerteilerAppAppDelegate.m:77 */,
+		);
+		codeSenseManager = 2828C010122C66AD00A88291 /* Code sense */;
+		executables = (
+			2828BFF8122C669300A88291 /* EmailVerteilerApp */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					886,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 314508705;
+			PBXWorkspaceStateSaveDate = 314508705;
+		};
+		perUserProjectItems = {
+			2828C031122CBC7600A88291 /* PBXTextBookmark */ = 2828C031122CBC7600A88291 /* PBXTextBookmark */;
+			284AA8A212BD005700F253BB /* PBXTextBookmark */ = 284AA8A212BD005700F253BB /* PBXTextBookmark */;
+			284AA8C912BD012C00F253BB /* PBXTextBookmark */ = 284AA8C912BD012C00F253BB /* PBXTextBookmark */;
+			284AA8CA12BD012C00F253BB /* PBXTextBookmark */ = 284AA8CA12BD012C00F253BB /* PBXTextBookmark */;
+			285FBF2212BCB824007651FD /* PBXTextBookmark */ = 285FBF2212BCB824007651FD /* PBXTextBookmark */;
+			285FBF2412BCB824007651FD /* PBXTextBookmark */ = 285FBF2412BCB824007651FD /* PBXTextBookmark */;
+			285FBF5312BCBE1A007651FD /* PBXTextBookmark */ = 285FBF5312BCBE1A007651FD /* PBXTextBookmark */;
+			28BB1EAB12BF05AB0080C438 /* PBXTextBookmark */ = 28BB1EAB12BF05AB0080C438 /* PBXTextBookmark */;
+			28BB1EB412BF05AB0080C438 /* PBXTextBookmark */ = 28BB1EB412BF05AB0080C438 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 2828C00F122C66AD00A88291 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 208}}";
+			sepNavSelRange = "{200, 0}";
+			sepNavVisRange = "{0, 261}";
+		};
+	};
+	8D1107260486CEB800E47090 /* EmailVerteilerApp */ = {
+		activeExec = 0;
+		executables = (
+			2828BFF8122C669300A88291 /* EmailVerteilerApp */,
+		);
+	};
+}
