@@ -24,8 +24,8 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
                                    key:nil
                                  value:@""
                             comparison:kABEqualCaseInsensitive];
-    NSArray *peopleFound =
-    [AB recordsMatchingSearchElement:namesWithOutEmails];
+    
+    NSArray *peopleFound = [AB recordsMatchingSearchElement:namesWithOutEmails];
 
     ABSearchElement *namesWithEmails =
     [ABPerson searchElementForProperty:kABEmailProperty
@@ -33,39 +33,68 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
                                    key:nil
                                  value:@""
                             comparison:kABNotEqualCaseInsensitive];
-    NSArray *peopleFoundWithEmail =
-    [AB recordsMatchingSearchElement:namesWithEmails];
+
+    NSArray *peopleFoundWithEmail = [AB recordsMatchingSearchElement:namesWithEmails];
     
-    NSString *peopleWithEmail = [NSString stringWithFormat:@"%d",[peopleFoundWithEmail count]];
-    NSString *peopleWithOutEmail = [NSString stringWithFormat:@"%d",[peopleFound count]];
+    ABSearchElement *namesWithStreetAdress =
+    [ABPerson searchElementForProperty:kABAddressProperty
+                                 label:nil
+                                   key:nil
+                                 value:@""
+                            comparison:kABNotEqualCaseInsensitive];
+
+    NSArray *peopleFoundWithStreetAddress = [AB recordsMatchingSearchElement:namesWithStreetAdress];
+    
+    NSString *peopleWithEmail = [NSString stringWithFormat:@"%lu",(unsigned long)[peopleFoundWithEmail count]];
+    NSString *peopleWithOutEmail = [NSString stringWithFormat:@"%lu",(unsigned long)[peopleFound count]];
+    NSString *peopleWithStreetAddress = [NSString stringWithFormat:@"%lu",(unsigned long)[peopleFoundWithStreetAddress count]];
     
     [LabelAdressesWithOutEmails setStringValue:peopleWithOutEmail];
     [LabelAdressesWithEmails    setStringValue:peopleWithEmail];
+    [LabelAdressesWithAdresses  setStringValue:peopleWithStreetAddress];
     
-    [fileNameWithEmails     setStringValue:@"AdressenEmails.csv"];
+//    NSString *homeDir   = [NSString stringWithString:NSHomeDirectory()];
+//    NSArray *homeDir = [NSArray arrayWithObjects:NSHomeDirectory()
+//    NSMutableString *pathToFile = [NSMutableString stringWithString:homeDir];
+//    [pathToFile appendString:@"/AdressenEmails.csv"];
+//    [fileNameWithEmails ]
+    [fileNameWithEmails  setStringValue:@"AdressenEmails.csv"];
     [fileNameWithOutEmails  setStringValue:@"Adressen.csv"];
+    [fileNameWithAddresses  setStringValue:@"AdressenPost.csv"];
+
+
+
 }
 
 -(void)selectFileWithEmails:(id)sender {
     NSOpenPanel *op = [NSOpenPanel openPanel];
-    if ([op runModal] == NSOKButton)
+    if ([op runModal] == NSModalResponseOK)
     {
-        [fileNameWithEmails setStringValue:[op filename]];
+        [fileNameWithEmails setStringValue:[[op URL] absoluteString]];
         NSLog(@"select the file for email addresses: %@",[fileNameWithEmails stringValue]);
     }
 }
 
 -(void)selectFileWithOutEmails:(id)sender {
     NSOpenPanel *op = [NSOpenPanel openPanel];
-    if ([op runModal] == NSOKButton)
+    if ([op runModal] == NSModalResponseOK)
     {
-        [fileNameWithOutEmails setStringValue:[op filename]];
+        [fileNameWithOutEmails setStringValue:[[op URL] absoluteString]];
         NSLog(@"select the files without email addresses: %@",[fileNameWithOutEmails stringValue]);
     }
 }
 
+-(void)fileNameWithAddresses:(id)sender {
+    NSOpenPanel *op = [NSOpenPanel openPanel];
+    if ([op runModal] == NSModalResponseOK)
+    {
+        [fileNameWithAddresses setStringValue:[[op URL] absoluteString]];
+        NSLog(@"select the files without email addresses: %@",[fileNameWithAddresses stringValue]);
+    }
+}
+
 #pragma mark exportAdressen
--(void)exportAdressen:(id)sender {
+-(void)exportAdresses:(id)sender allAddr:(BOOL)allAddresses {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSFileHandle *aFileHandle;
     NSString *aFile;
@@ -73,31 +102,47 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
     ABMutableMultiValue *multiValue;
     int                 index = 0;
     int i=0;
-    
-    [[NSFileManager defaultManager] createFileAtPath:[fileNameWithOutEmails stringValue]
-                                            contents:nil 
-                                          attributes:nil];
+
+    ABAddressBook *AB = [ABAddressBook sharedAddressBook];
+    ABSearchElement *namesFound = nil;
+    if ( allAddresses  ) {
+        namesFound = [ABPerson searchElementForProperty:kABAddressProperty
+                                     label:nil
+                                       key:nil
+                                     value:@""
+                                comparison:kABNotEqualCaseInsensitive];
         
-    aFile = [NSString stringWithString:[fileNameWithOutEmails stringValue]];
+        [[NSFileManager defaultManager] createFileAtPath:[fileNameWithAddresses stringValue]
+                                                contents:nil
+                                              attributes:nil];
+        
+        aFile = [NSString stringWithString:[fileNameWithAddresses stringValue]];
+        NSLog(@"export the Addresses to the %@",aFile);
+        
+    } else {
+        namesFound = [ABPerson searchElementForProperty:kABEmailProperty
+                                     label:nil
+                                       key:nil
+                                     value:@""
+                                comparison:kABEqualCaseInsensitive];
+        
+        [[NSFileManager defaultManager] createFileAtPath:[fileNameWithOutEmails stringValue]
+                                                contents:nil
+                                              attributes:nil];
+        
+        aFile = [NSString stringWithString:[fileNameWithOutEmails stringValue]];
+        NSLog(@"export the Addresses to the %@",aFile);
+        
+    }
+ 
     aFileHandle = [NSFileHandle fileHandleForWritingAtPath:aFile]; //telling aFilehandle what file write to
     if (aFileHandle == nil) {
         NSLog(@"open File for writing failed");
     }
     NSLog(@"file to write: %@",aFile);
     
-    //[aFileHandle writeData:[tempString dataUsingEncoding:NSUnicodeStringEncoding]];
-    
-    NSLog(@"export the Addresses to the %@",aFile);      
-
-    ABAddressBook *AB = [ABAddressBook sharedAddressBook];
-    ABSearchElement *namesWithOutEmails =
-    [ABPerson searchElementForProperty:kABEmailProperty
-                                 label:nil
-                                   key:nil
-                                 value:@""
-                            comparison:kABEqualCaseInsensitive];
     NSArray *peopleFound =
-    [AB recordsMatchingSearchElement:namesWithOutEmails];
+    [AB recordsMatchingSearchElement:namesFound];
 
     NSEnumerator *e = [peopleFound objectEnumerator];
     id object;
@@ -162,15 +207,14 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
                 [dict release];
             }
             }
+            //write into file
+            NSLog(@"%i tempString: %@",i,tempString);
+            tempString = [tempString stringByAppendingFormat:@"\r\n"];
             
+            [aFileHandle truncateFileAtOffset:[aFileHandle seekToEndOfFile]]; //setting aFileHandle to write at the end of the file
+            [aFileHandle writeData:[tempString dataUsingEncoding:NSUnicodeStringEncoding] ];            
         }
         i++;
-        //write into file
-        NSLog(@"%i tempString: %@",i,tempString);
-        tempString = [tempString stringByAppendingFormat:@"\r\n"];
-        
-        [aFileHandle truncateFileAtOffset:[aFileHandle seekToEndOfFile]]; //setting aFileHandle to write at the end of the file
-        [aFileHandle writeData:[tempString dataUsingEncoding:NSUnicodeStringEncoding] ];
         } else {
             NSLog(@"NO LASTNAME!!!!");
         }
@@ -181,7 +225,7 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
 }
 
 #pragma mark exportEmailAdressen
--(void)exportEmailAdressen:(id)sender {
+-(void)exportEmailAdresses:(id)sender {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSFileHandle *aFileHandle;
     NSString *aFile;
@@ -220,30 +264,34 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
         // Create a multiValue and populate it with the items in kABAddressProperty
         multiValue = [object valueForProperty: kABEmailProperty];
         if ( multiValue ) {
-            // Get an index into a multiValue value for the kABAddressHomeLabel label
-            if (FindFirstMatch(multiValue, kABEmailProperty, &index))
-            {
-                // kABAddressHomeLabel is a NSDictionary
-                NSMutableDictionary *dict = [[multiValue valueAtIndex: index] mutableCopy];
-                if ( [dict valueForKey: kABEmailWorkLabel] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABEmailWorkLabel]];
-//                    [tempString stringByAppendingFormat:[dict valueForKey: kABEmailWorkLabel]];
-                    tempString = [tempString stringByAppendingFormat:@";"];
-                    //[tempString stringByAppendingFormat:@";"];
-                if ( [dict valueForKey: kABEmailProperty] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABEmailHomeLabel]];
-                    //[tempString stringByAppendingFormat:[dict valueForKey: kABEmailHomeLabel]];
-                [dict release];
+            if ( [multiValue count] < 2) {
+                tempString = [ multiValue valueAtIndex:0];
+                tempString = [ tempString stringByAppendingString:@";" ];
+            } else {
+                NSLog(@"more than one EMAIL found!!");
+                for (int i=0; i < [ multiValue count ]; i++ ) {
+                    NSLog(@"%@", [ multiValue valueAtIndex:i] );
+                    tempString = [ tempString stringByAppendingString:[ multiValue valueAtIndex:i] ];
+                    tempString = [ tempString stringByAppendingString:@";" ];
+                }
+
             }
         }
         // append string to the file
-        tempString = [NSString stringWithString:[object valueForProperty:kABEmailProperty]];
         [aFileHandle truncateFileAtOffset:[aFileHandle seekToEndOfFile]]; //setting aFileHandle to write at the end of the file
         [aFileHandle writeData:[tempString dataUsingEncoding:NSUnicodeStringEncoding]];
     }
     [aFileHandle closeFile];
     [object release];
     [pool release];
+}
+
+- (IBAction)exportAllAdresses:(id)sender {
+    [self exportAdresses:nil allAddr:YES];
+}
+
+- (IBAction)exportAdresses:(id)sender {
+    [self exportAdresses:nil allAddr:NO];
 }
 
 #pragma mark FindFirstMatch

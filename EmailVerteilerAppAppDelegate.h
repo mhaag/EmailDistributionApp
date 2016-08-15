@@ -19,14 +19,17 @@
     NSWindow *window;
     IBOutlet NSTextField *LabelAdressesWithOutEmails;
     IBOutlet NSTextField *LabelAdressesWithEmails;
+    IBOutlet NSTextField *LabelAdressesWithAdresses;
     IBOutlet NSTextField *fileNameWithEmails;
     IBOutlet NSTextField *fileNameWithOutEmails;    
+    IBOutlet NSTextField *fileNameWithAddresses;
 }
 
 - (IBAction)selectFileWithEmails:(id)sender;
 - (IBAction)selectFileWithOutEmails:(id)sender;
-- (IBAction)exportAdressen:(id)sender;
-- (IBAction)exportEmailAdressen:(id)sender;
+- (IBAction)exportAdresses:(id)sender;
+- (IBAction)exportEmailAdresses:(id)sender;
+- (IBAction)exportAllAdresses:(id)sender;
 
 @property (assign) IBOutlet NSWindow *window;
 
