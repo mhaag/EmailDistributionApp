@@ -158,7 +158,7 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
         tempString = [NSString stringWithString:[object valueForProperty:kABLastNameProperty]];
         tempString = [tempString stringByAppendingFormat:@";"];
         if ( [object valueForProperty:kABFirstNameProperty] ) 
-            tempString = [tempString stringByAppendingFormat:[NSString stringWithString:[object valueForProperty:kABFirstNameProperty]]];
+            tempString = [tempString stringByAppendingString:[NSString stringWithString:[object valueForProperty:kABFirstNameProperty]]];
         NSLog(@"tempString: %@",tempString);
         tempString = [tempString stringByAppendingFormat:@";"];
 
@@ -176,16 +176,16 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
                 // kABAddressHomeLabel is a NSDictionary
                 NSMutableDictionary *dict = [[multiValue valueAtIndex: index] mutableCopy];
                 if ( [dict valueForKey: kABAddressStreetKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressStreetKey]];
-                tempString = [tempString stringByAppendingFormat:@";"];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressStreetKey]];
+                tempString = [tempString stringByAppendingString:@";"];
                 if ( [dict valueForKey: kABAddressZIPKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressZIPKey]];
-                tempString = [tempString stringByAppendingFormat:@";"];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressZIPKey]];
+                tempString = [tempString stringByAppendingString:@";"];
                 if ( [dict valueForKey: kABAddressCityKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressCityKey]];
-                tempString = [tempString stringByAppendingFormat:@";"];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressCityKey]];
+                tempString = [tempString stringByAppendingString:@";"];
                 if ( [dict valueForKey: kABAddressCountryKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressCountryKey]];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressCountryKey]];
                 [dict release];
             }
             // Get an index into a multiValue value for the kABWorkHomeLabel label
@@ -194,16 +194,16 @@ Boolean FindFirstMatch(ABMutableMultiValue *multiValue, NSString *label, int* in
                 // kABAddressHomeLabel is a NSDictionary
                 NSMutableDictionary *dict = [[multiValue valueAtIndex: index] mutableCopy];
                 if ( [dict valueForKey: kABAddressStreetKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressStreetKey]];
-                tempString = [tempString stringByAppendingFormat:@";"];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressStreetKey]];
+                tempString = [tempString stringByAppendingString:@";"];
                 if ( [dict valueForKey: kABAddressZIPKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressZIPKey]];
-                tempString = [tempString stringByAppendingFormat:@";"];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressZIPKey]];
+                tempString = [tempString stringByAppendingString:@";"];
                 if ( [dict valueForKey: kABAddressCityKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressCityKey]];
-                tempString = [tempString stringByAppendingFormat:@";"];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressCityKey]];
+                tempString = [tempString stringByAppendingString:@";"];
                 if ( [dict valueForKey: kABAddressCountryKey] )
-                    tempString = [tempString stringByAppendingFormat:[dict valueForKey: kABAddressCountryKey]];
+                    tempString = [tempString stringByAppendingString:[dict valueForKey: kABAddressCountryKey]];
                 [dict release];
             }
             }
